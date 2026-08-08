@@ -14,7 +14,10 @@ export default function Intro() {
     if (typeof window === "undefined") return false;
     const reduz = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const jaViu = sessionStorage.getItem(CHAVE) === "1";
-    return !reduz && !jaViu;
+    // Se o JS demorou a chegar (celular fraco ou internet ruim), o usuário já
+    // esperou demais — entrega o site direto em vez de somar mais 2s de animação.
+    const demorou = performance.now() > 1400;
+    return !reduz && !jaViu && !demorou;
   });
 
   useEffect(() => {
