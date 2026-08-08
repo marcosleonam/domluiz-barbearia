@@ -4,7 +4,7 @@ import { site, barbeiros } from "../config";
 
 const PONTOS = [
   "Três barbeiros na casa — excelência em cada detalhe, do corte à barba.",
-  "Barba italiana e barbear com toalha quente, o serviço que virou marca da Dom Luiz.",
+  "Barba terapia com toalha quente e navalha — o serviço que virou marca da Dom Luiz.",
   "Espaço infantil de verdade: cadeira de carrinho e espelho dos heróis pra criançada sentar numa boa.",
   "Nota 5,0 no Google com quem já sentou na cadeira.",
 ];

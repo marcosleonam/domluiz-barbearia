@@ -1,5 +1,5 @@
 import { Instagram, MessageCircle } from "lucide-react";
-import { site, whatsappLink } from "../config";
+import { site, whatsappLink, logoUrl } from "../config";
 
 export default function Footer() {
   const ano = new Date().getFullYear();
@@ -10,17 +10,13 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/60">
-                <span className="display text-gold text-lg leading-none pt-0.5">
-                  {site.monograma}
-                </span>
-              </span>
-              <span className="display text-2xl">
-                {site.nomeCompleto}
-                <span className="text-gold">.</span>
-              </span>
-            </div>
+            <img
+              src={logoUrl}
+              alt={site.nomeCompleto}
+              className="h-20 w-auto"
+              width="560"
+              height="361"
+            />
             <p className="mt-4 text-sm text-white/45 max-w-sm">
               {site.slogan}. Corte, barba e acabamento com hora marcada.
             </p>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { site, whatsappLink } from "../config";
+import { site, whatsappLink, logoUrl } from "../config";
 
 const LINKS = [
   { href: "#servicos", label: "Serviços" },
@@ -31,17 +31,15 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
-        <a href="#topo" className="flex items-center gap-3" onClick={fechar}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60">
-            <span className="display text-gold text-lg leading-none pt-0.5">
-              {site.monograma}
-            </span>
-          </span>
-          <span className="display text-xl md:text-2xl tracking-wide">
-            {site.nome}
-            <span className="text-gold">.</span>
-          </span>
+      <nav className="max-w-6xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
+        <a href="#topo" className="flex items-center" onClick={fechar}>
+          <img
+            src={logoUrl}
+            alt={site.nomeCompleto}
+            className="h-14 md:h-[72px] w-auto"
+            width="560"
+            height="361"
+          />
         </a>
 
         <ul className="hidden md:flex items-center gap-8">

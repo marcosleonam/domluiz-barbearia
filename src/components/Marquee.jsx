@@ -1,10 +1,11 @@
 const PALAVRAS = [
   "Corte na régua",
-  "Barba desenhada",
+  "Barba terapia",
   "Degradê",
-  "Navalhado",
+  "Freestyle",
   "Sobrancelha",
   "Pigmentação",
+  "Platinado",
   "Toalha quente",
   "Hora marcada",
 ];

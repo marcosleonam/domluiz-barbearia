@@ -5,6 +5,7 @@
 // Toca uma vez por sessão. Respeita prefers-reduced-motion. Tem botão de pular.
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { logoUrl } from "../config";
 
 const CHAVE = "dl_intro_visto";
 
@@ -96,15 +97,15 @@ export default function Intro() {
             <Tesoura />
           </motion.div>
 
-          {/* Monograma que some junto */}
-          <motion.span
-            className="display absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xs tracking-[0.42em] text-gold/70"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0, 1, 0] }}
-            transition={{ duration: 1.8, times: [0, 0.25, 0.55, 1] }}
-          >
-            DOM LUIZ
-          </motion.span>
+          {/* Logo que aparece no meio do corte e some junto */}
+          <motion.img
+            src={logoUrl}
+            alt=""
+            className="absolute left-1/2 top-1/2 w-52 md:w-64 -translate-x-1/2 -translate-y-1/2"
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: [0, 0, 1, 0], scale: [0.94, 0.94, 1, 1.04] }}
+            transition={{ duration: 1.9, times: [0, 0.28, 0.6, 1] }}
+          />
         </motion.div>
       )}
     </AnimatePresence>

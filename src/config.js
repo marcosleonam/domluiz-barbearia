@@ -46,43 +46,25 @@ export const horarios = [
 // Troque para true e preencha "preco" em cada serviço para exibir.
 export const mostrarPrecos = false;
 
+// Lista oficial da barbearia (arte "NOSSOS SERVIÇOS" enviada pelo cliente).
+// destaque: true => vira card grande na seção. Os demais entram na lista completa.
+// Todos aparecem no seletor do agendamento.
 export const servicos = [
   {
     id: "corte",
-    nome: "Corte de cabelo",
+    nome: "Corte masculino",
     desc: "Máquina, tesoura, degradê e navalha no acabamento.",
     preco: "",
     icone: "scissors",
     destaque: true,
   },
   {
-    id: "barba",
-    nome: "Barba italiana",
-    desc: "Desenho, contorno e finalização do jeito que virou marca da casa.",
-    preco: "",
-    icone: "razor",
-    destaque: true,
-  },
-  {
-    id: "toalha",
-    nome: "Barbear com toalha quente",
-    desc: "Toalha quente, navalha e pele descansada no fim.",
+    id: "barba-terapia",
+    nome: "Barba terapia",
+    desc: "Toalha quente, navalha, massagem e desenho da barba.",
     preco: "",
     icone: "flame",
-  },
-  {
-    id: "combo",
-    nome: "Corte + Barba",
-    desc: "O combo completo: sai pronto pra semana inteira.",
-    preco: "",
-    icone: "crown",
-  },
-  {
-    id: "botox",
-    nome: "Botox capilar",
-    desc: "Tratamento pra alinhar, dar brilho e controlar o volume.",
-    preco: "",
-    icone: "brush",
+    destaque: true,
   },
   {
     id: "infantil",
@@ -90,7 +72,41 @@ export const servicos = [
     desc: "Cadeira de carrinho e espelho dos heróis — a criançada senta numa boa.",
     preco: "",
     icone: "smile",
+    destaque: true,
   },
+  {
+    id: "sobrancelha",
+    nome: "Sobrancelha",
+    desc: "Design masculino no acabamento certo do olhar.",
+    preco: "",
+    icone: "eye",
+    destaque: true,
+  },
+  {
+    id: "botox",
+    nome: "Botox capilar",
+    desc: "Alinha, dá brilho e controla o volume do cabelo.",
+    preco: "",
+    icone: "flask",
+    destaque: true,
+  },
+  {
+    id: "platinado",
+    nome: "Platinado",
+    desc: "Descoloração completa com o tom fechado do jeito certo.",
+    preco: "",
+    icone: "snow",
+    destaque: true,
+  },
+  { id: "pezinho", nome: "Pezinho", desc: "Acabamento entre um corte e outro.", preco: "", icone: "ruler" },
+  { id: "penteado", nome: "Penteado", desc: "Finalização pro dia ou pro evento.", preco: "", icone: "wind" },
+  { id: "hidratacao", nome: "Hidratação", desc: "Repõe o que o sol e a química tiram.", preco: "", icone: "droplet" },
+  { id: "limpeza", nome: "Limpeza facial", desc: "Pele limpa, sem cravo e sem oleosidade.", preco: "", icone: "sparkles" },
+  { id: "pigmentacao", nome: "Pigmentação", desc: "Preenche falhas na barba e no contorno.", preco: "", icone: "brush" },
+  { id: "luzes", nome: "Luzes", desc: "Mechas pra dar volume e movimento.", preco: "", icone: "sun" },
+  { id: "selagem", nome: "Selagem", desc: "Reduz o volume e sela o fio.", preco: "", icone: "layers" },
+  { id: "depilacao-nasal", nome: "Depilação nasal", desc: "Rápido, e faz diferença no acabamento.", preco: "", icone: "feather" },
+  { id: "freestyle", nome: "Freestyle", desc: "Risco, desenho e detalhe feito na navalha.", preco: "", icone: "pen" },
 ];
 
 // Barbeiros da casa (confirmados no post da equipe).
@@ -132,6 +148,9 @@ export const fotos = {
     { arquivo: "interior.jpg", alt: "Salão da Dom Luiz Barbearia com espaço infantil" },
   ],
 };
+
+// Logo oficial (extraída da arte do cliente, fundo transparente).
+export const logoUrl = `${import.meta.env.BASE_URL}logo-domluiz.png`;
 
 export const fotoUrl = (arquivo) =>
   arquivo ? `${import.meta.env.BASE_URL}fotos/${arquivo}` : "";

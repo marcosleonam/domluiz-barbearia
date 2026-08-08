@@ -114,7 +114,7 @@ export default function Hero() {
           <ul className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
             {[
               { icone: Clock, titulo: "Hora marcada", texto: "Sem esperar a vez" },
-              { icone: Star, titulo: "Barba italiana", texto: "Toalha quente e navalha" },
+              { icone: Star, titulo: "Barba terapia", texto: "Toalha quente e navalha" },
               { icone: MessageCircle, titulo: "Reserva rápida", texto: "Direto no WhatsApp" },
             ].map((item) => (
               <li
