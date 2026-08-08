@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bebas Neue", "Inter", sans-serif;
+
+  --color-ink: #0b0b0c;        /* fundo base */
+  --color-ink-2: #121214;      /* superfícies (cards, form) */
+  --color-ink-3: #17171a;      /* superfície elevada */
+  --color-line: #26262b;       /* bordas */
+  --color-gold: #c8a24a;       /* accent principal */
+  --color-gold-soft: #e0b95d;  /* hover */
+  --color-zap: #25d366;        /* WhatsApp oficial */
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ink);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Título display caixa-alta */
+.display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+/* Faixa marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 34s linear infinite;
+}
+
+/* Listras de poste de barbeiro (usado em divisores) */
+@keyframes barberpole {
+  from { background-position: 0 0; }
+  to { background-position: 56px 0; }
+}
+.barber-pole {
+  background-image: repeating-linear-gradient(
+    115deg,
+    var(--color-gold) 0 8px,
+    #0b0b0c 8px 16px,
+    #7a1f24 16px 24px,
+    #0b0b0c 24px 32px
+  );
+  animation: barberpole 3.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .barber-pole { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* Textura sutil de fundo (sem imagem externa) */
+.grain {
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(200, 162, 74, 0.09), transparent 42%),
+    radial-gradient(circle at 82% 78%, rgba(200, 162, 74, 0.06), transparent 46%);
+}
+
+/* Foco acessível padrão */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
