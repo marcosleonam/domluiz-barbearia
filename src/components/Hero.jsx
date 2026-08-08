@@ -80,17 +80,17 @@ export default function Hero() {
           </div>
 
           <h1 className="display mt-6 text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem]">
-            Corte de
+            Senta na
             <br />
-            <span className="text-gold">respeito</span>
+            cadeira.
             <br />
-            sem fila.
+            Levanta <span className="text-gold">rei</span>.
           </h1>
 
           <p className="mt-7 max-w-xl text-base md:text-lg text-white/70 leading-relaxed">
-            Na <strong className="text-white">{site.nomeCompleto}</strong> você
-            escolhe o serviço, o barbeiro, o dia e o horário — e confirma tudo em
-            uma conversa de WhatsApp. Chegou, sentou, cortou.
+            Corte, barba e acabamento na <strong className="text-white">{site.nomeCompleto}</strong> —
+            no Jardim Eldorado. Escolhe o barbeiro, o dia e a hora: a reserva sai
+            numa conversa de WhatsApp.
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
