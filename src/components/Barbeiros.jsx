@@ -68,31 +68,33 @@ export default function Barbeiros() {
               <motion.li
                 key={nome}
                 variants={item}
-                className="group flex flex-col sm:flex-row sm:items-center gap-5 rounded-3xl border border-line bg-ink-2 p-6 transition-colors hover:border-gold/50"
+                className="group rounded-3xl border border-line bg-ink-2 p-6 transition-colors hover:border-gold/50"
               >
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
-                  <span className="display text-2xl text-gold leading-none pt-1">
-                    {nome.charAt(0)}
+                <div className="flex items-center gap-4">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
+                    <span className="display text-2xl text-gold leading-none pt-1">
+                      {nome.charAt(0)}
+                    </span>
                   </span>
-                </span>
 
-                <div className="flex-1 min-w-0">
-                  <h3 className="display text-2xl">{nome}</h3>
-                  <p className="mt-1 text-sm text-white/55">
-                    {BIOS[nome] || "Barbeiro da casa."}
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="display text-2xl">{nome}</h3>
+                    <p className="mt-1 text-sm text-white/55">
+                      {BIOS[nome] || "Barbeiro da casa."}
+                    </p>
+                  </div>
                 </div>
 
                 <a
                   href={whatsappLink(
-                    `Olá! Vim pelo site da ${site.nomeCompleto} e quero marcar um horário com o ${nome}.`
+                    `Olá! Quero agendar com ${nome} na ${site.nomeCompleto}.`
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-line px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white/75 transition-colors group-hover:border-gold group-hover:text-gold"
+                  className="mt-5 flex w-full items-center justify-center gap-2 rounded-full border border-line px-5 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white/75 transition-colors group-hover:border-gold group-hover:text-gold"
                 >
-                  <MessageCircle className="h-3.5 w-3.5" />
-                  Reservar
+                  <MessageCircle className="h-3.5 w-3.5 shrink-0" />
+                  Quero agendar com {nome}
                 </a>
               </motion.li>
             ))}

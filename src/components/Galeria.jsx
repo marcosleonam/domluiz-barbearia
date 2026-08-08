@@ -71,7 +71,7 @@ export default function Galeria() {
           {/* Card de avaliação do Google */}
           <motion.div
             variants={item}
-            className="flex flex-col justify-center rounded-2xl border border-gold/30 bg-ink-2 p-6 aspect-[4/5]"
+            className="flex flex-col justify-center rounded-2xl border border-gold/30 bg-ink-2 p-5 sm:p-6 sm:aspect-[4/5]"
           >
             <div className="flex items-center gap-1 text-gold">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -96,13 +96,13 @@ export default function Galeria() {
             href={site.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-line bg-ink-2 p-6 aspect-[4/5] text-center transition-colors hover:border-gold/60"
+            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-line bg-ink-2 p-5 sm:p-6 sm:aspect-[4/5] text-center transition-colors hover:border-gold/60"
           >
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-line bg-ink-3 text-gold transition-colors group-hover:border-gold/50">
               <Instagram className="h-6 w-6" />
             </span>
             <p className="display text-2xl">Tem mais lá</p>
-            <p className="text-sm text-white/50 break-all">
+            <p className="hidden sm:block text-sm text-white/50 break-words">
               {site.instagramHandle}
             </p>
             <span className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-gold">

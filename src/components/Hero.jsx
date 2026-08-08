@@ -79,18 +79,18 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="display mt-6 text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem]">
-            Senta na
-            <br />
-            cadeira.
-            <br />
-            Levanta <span className="text-gold">rei</span>.
+          <h1 className="display mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl leading-[1.02]">
+            Se todo corte parece igual, você ainda não encontrou o{" "}
+            <span className="text-gold">barbeiro certo</span>.
           </h1>
 
           <p className="mt-7 max-w-xl text-base md:text-lg text-white/70 leading-relaxed">
-            Corte, barba e acabamento na <strong className="text-white">{site.nomeCompleto}</strong> —
-            no Jardim Eldorado. Escolhe o barbeiro, o dia e a hora: a reserva sai
-            numa conversa de WhatsApp.
+            Aqui, cada detalhe é pensado para combinar com seu estilo, seu rosto
+            e sua personalidade.
+          </p>
+
+          <p className="mt-4 max-w-xl text-base md:text-lg font-semibold text-gold">
+            Seu próximo corte pode ser o melhor até agora.
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
