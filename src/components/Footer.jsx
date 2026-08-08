@@ -1,4 +1,5 @@
-import { Instagram, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
+import IconeInstagram from "./IconeInstagram";
 import { site, whatsappLink, logoUrl } from "../config";
 
 export default function Footer() {
@@ -38,7 +39,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-white/80 transition-colors hover:border-gold/60 hover:text-gold"
             >
-              <Instagram className="h-4 w-4" />
+              <IconeInstagram className="h-5 w-5" />
               Instagram
             </a>
           </div>

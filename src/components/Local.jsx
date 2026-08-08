@@ -1,5 +1,6 @@
-import { MapPin, Clock, Phone, Instagram } from "lucide-react";
+import { MapPin, Clock, Phone } from "lucide-react";
 import Section, { TituloSecao } from "./Section";
+import IconeInstagram from "./IconeInstagram";
 import { site, horarios, whatsappLink } from "../config";
 
 export default function Local() {
@@ -100,7 +101,7 @@ export default function Local() {
                   rel="noopener noreferrer"
                   className="mt-1 inline-flex items-center gap-2 font-semibold text-white/80 hover:text-gold transition-colors"
                 >
-                  <Instagram className="h-4 w-4 text-gold" />
+                  <IconeInstagram className="h-5 w-5" />
                   {site.instagramHandle}
                 </a>
               </div>

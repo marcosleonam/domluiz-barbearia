@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Instagram, Star, X, Maximize2 } from "lucide-react";
+import { Star, X, Maximize2 } from "lucide-react";
 import Section, { TituloSecao } from "./Section";
 import Foto from "./Foto";
+import IconeInstagram from "./IconeInstagram";
 import { fotos, site, avaliacoes, fotoUrl } from "../config";
 
 const lista = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
@@ -98,9 +99,7 @@ export default function Galeria() {
             rel="noopener noreferrer"
             className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-line bg-ink-2 p-5 sm:p-6 sm:aspect-[4/5] text-center transition-colors hover:border-gold/60"
           >
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-line bg-ink-3 text-gold transition-colors group-hover:border-gold/50">
-              <Instagram className="h-6 w-6" />
-            </span>
+            <IconeInstagram className="h-14 w-14 transition-transform duration-300 group-hover:scale-110" />
             <p className="display text-2xl">Tem mais lá</p>
             <p className="hidden sm:block text-sm text-white/50 break-words">
               {site.instagramHandle}
