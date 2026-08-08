@@ -23,8 +23,11 @@ export const site = {
 
   endereco: "Av. Oito, 45 — Jardim Eldorado",
   bairro: "São Luís/MA, 65065-750",
-  mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Dom+Luiz+barbearia+Av.+Oito+45+Jardim+Eldorado+S%C3%A3o+Lu%C3%ADs+MA",
+  // Link curto do perfil no Google Maps (enviado pelo cliente).
+  mapsUrl: "https://maps.app.goo.gl/vTJRZC31U7mdNYQ58",
+  // Mapa embutido — não precisa de chave de API.
+  mapsEmbed:
+    "https://www.google.com/maps?q=Dom+Luiz+Barbearia%2C+Av.+Oito%2C+45+-+Jardim+Eldorado%2C+S%C3%A3o+Lu%C3%ADs+-+MA%2C+65065-750&output=embed",
 
   // Nota do perfil do Google.
   nota: "5,0",

@@ -116,6 +116,34 @@ export default function Local() {
             </a>
           </div>
         </div>
+
+        {/* Mapa */}
+        {site.mapsEmbed && (
+          <div className="mt-6 overflow-hidden rounded-3xl border border-line">
+            <iframe
+              src={site.mapsEmbed}
+              title={`Localização da ${site.nomeCompleto} no mapa`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              className="block h-[320px] w-full border-0 md:h-[420px]"
+            />
+          </div>
+        )}
+
+        {site.mapsUrl && (
+          <div className="mt-6 text-center">
+            <a
+              href={site.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-line bg-ink-2 px-7 py-4 text-sm font-semibold text-white/85 transition-colors hover:border-gold/60 hover:text-gold"
+            >
+              <MapPin className="h-4 w-4" />
+              Como chegar — abrir no Google Maps
+            </a>
+          </div>
+        )}
       </div>
     </Section>
   );
