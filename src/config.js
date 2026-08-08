@@ -140,20 +140,23 @@ export const avaliacoes = [
 // ── FOTOS ────────────────────────────────────────────────────────────────────
 // Arquivos ficam em  public/fotos/  — para trocar, basta substituir o arquivo
 // mantendo o mesmo nome (ou apontar um novo nome aqui) e rodar npm run build.
+// Tudo em WebP e no tamanho que a tela realmente usa — o site abre rápido no 4G.
 export const fotos = {
-  hero: "interior.jpg",
+  // Hero em duas larguras (o navegador escolhe pela tela).
+  hero: "interior-1600.webp",
+  heroPequena: "interior-900.webp",
   // A foto da equipe aparece SÓ na seção "A equipe".
-  equipe: "equipe.jpg",
+  equipe: "equipe.webp",
   galeria: [
-    { arquivo: "corte-degrade.jpg", alt: "Corte com degradê feito na Dom Luiz Barbearia" },
-    { arquivo: "barba-italiana.jpg", alt: "Barba italiana desenhada na Dom Luiz Barbearia" },
-    { arquivo: "toalha-quente.jpg", alt: "Barbear com toalha quente na Dom Luiz Barbearia" },
-    { arquivo: "interior.jpg", alt: "Salão da Dom Luiz Barbearia com espaço infantil" },
+    { arquivo: "corte-degrade.webp", alt: "Corte com degradê feito na Dom Luiz Barbearia" },
+    { arquivo: "barba-italiana.webp", alt: "Barba italiana desenhada na Dom Luiz Barbearia" },
+    { arquivo: "toalha-quente.webp", alt: "Barbear com toalha quente na Dom Luiz Barbearia" },
+    { arquivo: "interior.webp", alt: "Salão da Dom Luiz Barbearia com espaço infantil" },
   ],
 };
 
 // Logo oficial (extraída da arte do cliente, fundo transparente).
-export const logoUrl = `${import.meta.env.BASE_URL}logo-domluiz.png`;
+export const logoUrl = `${import.meta.env.BASE_URL}logo-domluiz.webp`;
 
 export const fotoUrl = (arquivo) =>
   arquivo ? `${import.meta.env.BASE_URL}fotos/${arquivo}` : "";

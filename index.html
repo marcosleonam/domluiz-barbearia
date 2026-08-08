@@ -19,6 +19,15 @@
     />
     <meta property="og:locale" content="pt_BR" />
 
+    <link
+      rel="preload"
+      as="image"
+      href="./fotos/interior-900.webp"
+      imagesrcset="./fotos/interior-900.webp 900w, ./fotos/interior-1600.webp 1600w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "HairSalon",
         "name": "Dom Luiz Barbearia",
-        "image": "./fotos/interior.jpg",
+        "image": "./fotos/interior-1600.webp",
         "telephone": "+5598985178824",
         "address": {
           "@type": "PostalAddress",

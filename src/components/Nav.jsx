@@ -37,8 +37,9 @@ export default function Nav() {
             src={logoUrl}
             alt={site.nomeCompleto}
             className="h-14 md:h-[72px] w-auto"
-            width="560"
-            height="361"
+            width="340"
+            height="219"
+            fetchpriority="high"
           />
         </a>
 

@@ -12,6 +12,7 @@ export default function Foto({ arquivo, alt, className = "", children }) {
         src={url}
         alt={alt}
         loading="lazy"
+        decoding="async"
         className={`w-full h-full object-cover ${className}`}
       />
     );

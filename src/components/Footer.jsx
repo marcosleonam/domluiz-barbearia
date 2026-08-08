@@ -15,8 +15,10 @@ export default function Footer() {
               src={logoUrl}
               alt={site.nomeCompleto}
               className="h-20 w-auto"
-              width="560"
-              height="361"
+              width="340"
+              height="219"
+              loading="lazy"
+              decoding="async"
             />
             <p className="mt-4 text-sm text-white/45 max-w-sm">
               {site.slogan}. Corte, barba e acabamento com hora marcada.

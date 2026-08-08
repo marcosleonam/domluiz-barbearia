@@ -21,7 +21,7 @@ export default function Intro() {
     if (!ativo) return;
     sessionStorage.setItem(CHAVE, "1");
     document.body.style.overflow = "hidden";
-    const t = setTimeout(() => setAtivo(false), 2600);
+    const t = setTimeout(() => setAtivo(false), 1900);
     return () => {
       clearTimeout(t);
       document.body.style.overflow = "";
@@ -36,7 +36,7 @@ export default function Intro() {
     inicial: { x: 0 },
     fim: {
       x: lado === "esq" ? "-100%" : "100%",
-      transition: { duration: 0.75, delay: 1.55, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.62, delay: 1.12, ease: [0.76, 0, 0.24, 1] },
     },
   });
 
@@ -71,8 +71,8 @@ export default function Intro() {
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: 1.2,
-              delay: 0.85,
+              duration: 0.9,
+              delay: 0.6,
               times: [0, 0.55, 1],
               ease: "easeInOut",
             }}
@@ -89,7 +89,7 @@ export default function Intro() {
               y: [-180, -180, 190, 190],
             }}
             transition={{
-              duration: 1.95,
+              duration: 1.45,
               times: [0, 0.18, 0.72, 1],
               ease: ["easeOut", "linear", "easeIn"],
             }}
@@ -104,7 +104,15 @@ export default function Intro() {
             className="absolute left-1/2 top-1/2 w-52 md:w-64 -translate-x-1/2 -translate-y-1/2"
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: [0, 0, 1, 0], scale: [0.94, 0.94, 1, 1.04] }}
-            transition={{ duration: 1.9, times: [0, 0.28, 0.6, 1] }}
+            transition={{ duration: 1.4, times: [0, 0.28, 0.6, 1] }}
+          />
+
+          {/* Toque/clique pula a abertura */}
+          <button
+            type="button"
+            onClick={() => setAtivo(false)}
+            aria-label="Pular abertura"
+            className="pointer-events-auto absolute inset-0 h-full w-full cursor-pointer bg-transparent"
           />
         </motion.div>
       )}

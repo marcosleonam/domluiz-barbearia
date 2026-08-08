@@ -47,9 +47,14 @@ export default function Hero() {
           {bg ? (
             <img
               src={bg}
+              srcSet={`${fotoUrl(fotos.heroPequena)} 900w, ${bg} 1600w`}
+              sizes="100vw"
               alt=""
               className="h-full w-full object-cover"
               fetchpriority="high"
+              decoding="async"
+              width="1600"
+              height="2152"
             />
           ) : (
             <div className="h-full w-full bg-ink grain" />
