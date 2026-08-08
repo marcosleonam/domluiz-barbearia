@@ -1,3 +1,4 @@
+import Intro from "./components/Intro";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
@@ -12,6 +13,7 @@ import WhatsAppFloat from "./components/WhatsAppFloat";
 export default function App() {
   return (
     <>
+      <Intro />
       <Nav />
       <main className="min-h-screen">
         <Hero />
