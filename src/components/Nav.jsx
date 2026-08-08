@@ -5,6 +5,7 @@ import { site, whatsappLink } from "../config";
 const LINKS = [
   { href: "#servicos", label: "Serviços" },
   { href: "#galeria", label: "Galeria" },
+  { href: "#equipe", label: "Equipe" },
   { href: "#sobre", label: "A barbearia" },
   { href: "#local", label: "Horários" },
 ];

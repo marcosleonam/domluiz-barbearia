@@ -123,13 +123,13 @@ export const avaliacoes = [
 // mantendo o mesmo nome (ou apontar um novo nome aqui) e rodar npm run build.
 export const fotos = {
   hero: "interior.jpg",
-  sobre: "equipe.jpg",
+  // A foto da equipe aparece SÓ na seção "A equipe".
+  equipe: "equipe.jpg",
   galeria: [
     { arquivo: "corte-degrade.jpg", alt: "Corte com degradê feito na Dom Luiz Barbearia" },
     { arquivo: "barba-italiana.jpg", alt: "Barba italiana desenhada na Dom Luiz Barbearia" },
     { arquivo: "toalha-quente.jpg", alt: "Barbear com toalha quente na Dom Luiz Barbearia" },
     { arquivo: "interior.jpg", alt: "Salão da Dom Luiz Barbearia com espaço infantil" },
-    { arquivo: "equipe.jpg", alt: "Equipe de barbeiros da Dom Luiz Barbearia" },
   ],
 };
 

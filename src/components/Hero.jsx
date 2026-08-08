@@ -1,35 +1,71 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useReducedMotion,
+} from "framer-motion";
 import { MessageCircle, Star, Clock, MapPin } from "lucide-react";
 import { site, fotos, fotoUrl, whatsappLink } from "../config";
 
 export default function Hero() {
+  const ref = useRef(null);
+  const reduz = useReducedMotion();
   const bg = fotoUrl(fotos.hero);
+
+  // Hooks sempre rodam; o movimento é anulado depois se o usuário pediu menos animação.
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const suave = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    mass: 0.5,
+  });
+  const yFundo = useTransform(suave, [0, 1], ["0%", "18%"]);
+  const escalaFundo = useTransform(suave, [0, 1], [1, 1.12]);
+  const yTexto = useTransform(suave, [0, 1], [0, -110]);
+  const opacidadeTexto = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+
+  const estiloFundo = reduz ? {} : { y: yFundo, scale: escalaFundo };
+  const estiloTexto = reduz ? {} : { y: yTexto, opacity: opacidadeTexto };
 
   return (
     <section
       id="topo"
+      ref={ref}
       className="relative min-h-[100svh] flex items-center overflow-hidden"
     >
-      {/* Fundo: foto real quando existir, senão gradiente da marca */}
+      {/* Fundo com parallax */}
       <div className="absolute inset-0" aria-hidden="true">
-        {bg ? (
-          <img
-            src={bg}
-            alt=""
-            className="h-full w-full object-cover"
-            fetchpriority="high"
-          />
-        ) : (
-          <div className="h-full w-full bg-ink grain" />
-        )}
+        <motion.div
+          style={{ ...estiloFundo, willChange: "transform" }}
+          className="absolute inset-0 -top-[10%] h-[120%]"
+        >
+          {bg ? (
+            <img
+              src={bg}
+              alt=""
+              className="h-full w-full object-cover"
+              fetchpriority="high"
+            />
+          ) : (
+            <div className="h-full w-full bg-ink grain" />
+          )}
+        </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/80 to-ink" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-6 pt-28 pb-20 md:pt-32 md:pb-24 w-full">
+      <motion.div
+        style={estiloTexto}
+        className="relative max-w-6xl mx-auto px-6 pt-28 pb-20 md:pt-32 md:pb-24 w-full"
+      >
         <motion.div
-          initial={{ opacity: 0, y: 26 }}
+          initial={{ opacity: 0, y: reduz ? 0 : 26 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl"
         >
           <div className="flex flex-wrap items-center gap-3">
@@ -53,8 +89,8 @@ export default function Hero() {
 
           <p className="mt-7 max-w-xl text-base md:text-lg text-white/70 leading-relaxed">
             Na <strong className="text-white">{site.nomeCompleto}</strong> você
-            escolhe o serviço, o dia e o horário — e confirma tudo em uma
-            conversa de WhatsApp. Chegou, sentou, cortou.
+            escolhe o serviço, o barbeiro, o dia e o horário — e confirma tudo em
+            uma conversa de WhatsApp. Chegou, sentou, cortou.
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -94,7 +130,7 @@ export default function Hero() {
             ))}
           </ul>
         </motion.div>
-      </div>
+      </motion.div>
 
       <div className="absolute inset-x-0 bottom-0 h-1.5 barber-pole" aria-hidden="true" />
     </section>
